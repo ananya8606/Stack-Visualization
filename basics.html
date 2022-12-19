@@ -1,0 +1,96 @@
+<html>
+<head>
+    <title>Stack Visualization</title>
+    <link rel="stylesheet" href="basics.css" />
+</head>
+<body>
+    <div class="wrapper">
+        <div id="container">
+            <div id="canvas" class="box box-full">
+                <div id="canvas-wrapper">
+                    <h2 style="text-align:center;">Stack Visualization</h2>
+                    <div id="target">
+                        <div id="array-wrapper">
+                            <div id="array"></div>
+                        </div>
+                        <span
+                            style="position:relative; display: block; font-size: 16px; margin: 10px 250px;">Array</span>
+                        <div id="lowerbound">
+                            <div id="stack-wrapper">
+                                <div id="stack"></div>
+                                <span
+                                    style="position:relative; display: block; font-size: 16px; margin: 10px 70px;">Stack</span>
+                            </div>
+                            <div class="inputs">
+                                <div class="form-row">
+                                    <input type="text" id="push-item" name="push-item" class="input"
+                                        placeholder="Enter Element" required />
+                                    <input type="submit" id="reset-btn" value="Reset" onclick="reset()"
+                                        class="btn reset-btn" />
+                                </div>
+                                <div class="form-row">
+                                    <input type="number" id="set-capacity" name="set-capacity" class="input"
+                                        placeholder="Enter Size" required />
+                                    <input type="submit" id="setCapacity-btn" value="Set Size" onclick="setCapacity()"
+                                        class="btn btn-orange setCapacity-btn" />
+                                </div>
+                                <div class="form-row">
+                                    <input type="submit" name="push-btn" value="Push" onclick="push()"
+                                        class="btn btn-green push-btn" />
+                                    <input type="submit" id="pop-item" name="pop-item" value="Pop " onclick="pop()"
+                                        class="btn btn-red pop-btn" />
+                                </div>
+                                <div class="form-row">
+                                    <input type="button" name="ispeak" value="Peak" onclick="ispeak()"
+                                        class="btn btn-yellow peak-btn" />
+                                    <input type="button" name="isempty" value="IsEmpty?" onclick="isempty()"
+                                        class="btn btn-blue empty-btn" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="code" class="box box-half">
+                <div id="algo-box">
+                    <li id="current_algo" class="algo-steps">
+                        >> INIT_STACK (STACK, TOP) <br />
+                        <br />
+                        Algorithm to initialize a stack using array. <br />
+                        TOP points to the top-most element of stack.<br />
+                        <br /><br />
+                        1) TOP: = 0; 2) Exit
+                    </li>
+                </div>
+                <div id="step-tracker">
+                    <div id="start-step" class="step-box">
+                        <h3 class="box-title">
+                            Item <b class="highlight">"Pushed"</b> is</h3>
+                        <h1 class="box-value" id="pushed"></h1>
+                    </div>
+                    <div id="last-step" class="step-box">
+                        <h3 class="box-title">
+                            Item <b class="highlight">"Popped"</b> is
+                        </h3>
+                        <h1 class="box-value" id="popped"></h1>
+                    </div>
+                    <div id="mid-step" class="step-box">
+                        <h3 class="box-title">
+                            Stack<b class="highlight">"Pointer"</b> is
+                        </h3>
+                        <h1 class="box-value" id="pointer">-1</h1>
+                    </div>
+                    <div id="blue-box" class="step-box">
+                        <h3 class="box-title">
+                            <b class="highlight">"Top"</b> Element is
+                        </h3>
+                        <h1 class="box-value" id="top_element"></h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="jquery-3.5.1.min.js"></script>
+<script src="basics.js"></script>
+</html>

@@ -50,7 +50,6 @@
     border-radius: 10px;
   }
   
-  /* ======= canvas ends ======= */
   #lowerbound{
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -75,8 +74,6 @@
     margin: 10px;
     text-shadow: 2px 2px 5px #181818, -2px -2px 5px #2c2c2cd8;
   }
-  
-  /* ========= controls ========= */
   
   .input, #push-item, #set-capacity {
     align-items: center;
@@ -174,7 +171,6 @@
     transition: 0.5s ease;
   }
   
-  /* ================ Dashboard Data Card like Designs for Live Data =============== */
   #step-tracker {
     display: flex;
     flex-direction: column;
@@ -184,6 +180,7 @@
     min-width:250px;
     margin-top:10px;
   }
+
   .step-box {
     display: flex;
     margin:5px;
@@ -266,7 +263,7 @@
   .push-btn, .pop-btn,.peak-btn,.empty-btn{
     width: 50%;
   }
-  /* ============= Stack designs ============== */
+ 
   #array-wrapper {
     display: block;
     height:60px;

@@ -54,7 +54,7 @@ function push() {
       pushcount++;
       document.getElementById("pointer").innerHTML = counter;
       arr.push(document.getElementById("push-item").value);
-      $("#stack").prepend(
+      $("#stack").append(
         '<div id="r' +
           counter +
           1 +
@@ -62,6 +62,8 @@ function push() {
           document.getElementById("push-item").value +
           " </div>"
       );
+      var scrolldiv = document.getElementById("stack")
+      scrolldiv.scrollTop = -scrolldiv.scrollHeight
       document.getElementById("pushed").innerHTML =
         document.getElementById("push-item").value;
       document.getElementById("top_element").innerHTML = arr[counter];
@@ -72,7 +74,9 @@ function push() {
           document.getElementById("push-item").value +
           " </div>"
       );
-      document.getElementById("push-item").value = "";
+      var scrolldiv = document.getElementById("array")
+      scrolldiv.scrollLeft = scrolldiv.scrollWidth
+      //document.getElementById("push-item").value = "";
       document.getElementById("popped").innerHTML = "";
     }
   } else {
@@ -130,10 +134,9 @@ function reset() {
 function setCapacity() {
   if (document.getElementById("set-capacity").value < 0) {
     alert("Stack Size should be greater than zero.");
-  } else if (document.getElementById("set-capacity").value > 9) {
-    alert("Select Stack size less than 10.");
   } else {
     capacity = document.getElementById("set-capacity").value;
   }
   document.getElementById("set-capacity").value = "";
 }
+

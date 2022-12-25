@@ -12,7 +12,6 @@
     font-family: "Sen", sans-serif;
     letter-spacing: 2px;
     overflow-x: auto;
-    height: fit-content;
   }
   
   .wrapper {
@@ -74,6 +73,7 @@
     margin: 10px;
     text-shadow: 2px 2px 5px #181818, -2px -2px 5px #2c2c2cd8;
   }
+  
   
   .input, #push-item, #set-capacity {
     align-items: center;
@@ -180,7 +180,6 @@
     min-width:250px;
     margin-top:10px;
   }
-
   .step-box {
     display: flex;
     margin:5px;
@@ -256,22 +255,23 @@
   .push-btn, .pop-btn,.peak-btn,.empty-btn{
     width: 50%;
   }
- 
+
   #array-wrapper {
     display: block;
+  }
+  #array {
+    display: -webkit-box;
+    flex-direction: row;
+    align-items: flex-start;
     height:60px;
     padding: 5px;
     background: #101010;
-    width: 540px;
+    width:540px;
     border-radius: 20px;
     margin-bottom: 10px;
     box-shadow: 10px 10px 10px #181818, -5px -5px 10px #4e4e4e4f;
-  }
-  #array {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-start;
+    overflow-x: scroll;
+    overflow-y: hidden;
   }
   .array_box {
     height: 40px;
@@ -292,17 +292,25 @@
     padding: 10px 50px;
     width: 200px;
   }
-  #stack {
-    display: table-cell;
+  #stack-scroll {
+    display: flex;
+    overflow: hidden;
     text-align: center;
     width: 200px;
-    height: 350px;
+    height: 100%;
     vertical-align: bottom;
     background: #101010;
     border-radius: 20px;
     box-shadow: 5px 5px 10px #181818, -5px -5px 10px #4e4e4e4f;
     margin-left: 0px;
     margin-bottom: 0px;
+  }
+  #stack{
+    overflow-y:scroll;
+    overflow-x: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column-reverse;
   }
   .stack_box {
     height: 30px;
@@ -315,12 +323,6 @@
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
     background: rgba(0, 122, 255, 0.2);
     color: rgb(0, 122, 255);
-    animation: flip 0.5s cubic-bezier(0.07, 0.84, 0.96, 0.23) forwards;
-    animation-timing-function: ease-in;
-    animation-delay: 0ms;
-    animation-direction: normal;
-    animation-fill-mode: forwards;
-    transform-origin: 50%;
   }
   #pushed{
     color: #4caf50;
